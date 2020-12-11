@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= display_meta_tags title: @page_title, description: @page_description, keywords: @page_keywords %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="tetx/html; charset=utf-8"/>
+  </head>
+
+  <body>
+    <!-- Top Header -->
+    <%= render 'include/main/top_header' %>
+    <!-- Top Header -->
+
+    <!-- Start Logo -->
+    <div class="logo">
+      <%= link_to root_path do %>
+        <h1>Luxury Watches</h1>
+      <% end %>
+    </div>
+    <!-- Start Logo -->
+
+    <!-- Bottom Header -->
+    <%= render 'include/main/bottom_header' %>
+    <!-- Bottom Header -->
+
+
+    <div class="content">
+      <%= yield %>
+    </div>
+
+    <!-- Footer -->
+    <%= render 'include/main/footer' %>
+    <!-- Footer -->
+
+
+    <script src="<%= asset_path 'application' %>"></script>
+  </body>
+</html>
