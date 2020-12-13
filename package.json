@@ -1,5 +1,14 @@
 {
   "name": "myapp",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "popper": "^1.0.1"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Sakhno0408/store_app.git",
+  "author": "sakhno0408 <sakhno0408@gmail.com>",
+  "license": "MIT"
 }
