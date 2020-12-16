@@ -8,6 +8,7 @@ gem 'faker'
 gem 'breadcrumbs_on_rails'
 gem 'meta-tags'
 gem 'bootstrap-sass'
+gem 'ancestry'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

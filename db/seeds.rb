@@ -34,24 +34,23 @@ end
 
 
 # table categories
-#
-#
-# women = Category.create(title: 'Women', bytitle: 'women', keywords: 'women', description: 'for women')
-# electronic2 = Category.create(title: 'Electronic', bytitle: 'electronic2', keywords: 'electronic', description: 'electronic', parent: women)
-# mechanical2 = Category.create(title: 'Mechanical', bytitle: 'mechanical2', keywords: 'mechanical', description: 'mechanical', parent: women)
-# epos = Category.create(title: 'Epos', bytitle: 'epos', keywords: 'epos', description: 'epos', parent: electronic2)
-# seiko = Category.create(title: 'Seiko', bytitle: 'seiko', keywords: 'seiko', description: 'seiko', parent: mechanical2)
-#
-# men = Category.create(title: 'Men', bytitle: 'men', keywords: 'men', description: 'for men')
-# electronic1 = Category.create(title: 'Electronic', bytitle: 'electronic1', keywords: 'electronic', description: 'electronic', parent: men)
-# mechanical1 = Category.create(title: 'Mechanical', bytitle: 'mechanical1', keywords: 'mechanical', description: 'mechanical', parent: men)
-# casio = Category.create(title: 'Casio', bytitle: 'casio', keywords: 'casio', description: 'casio', parent: mechanical1)
-# citizen = Category.create(title: 'Citizen', bytitle: 'citizen', keywords: 'citizen', description: 'citizen', parent: electronic1)
-# royal = Category.create(title: 'Royal London', bytitle: 'royal-london', keywords: 'royal-london', description: 'royal-london', parent: electronic1)
-#
-# kids = Category.create(title: 'Kids', bytitle: 'kids', keywords: 'kids', description: 'for kids')
-# adriatica = Category.create(title: 'Adriatica', bytitle: 'adriatica', keywords: 'adriatica', description: 'adriatica', parent: kids)
-# mechanical1 = Category.create(title: 'Anne Klein', bytitle: 'anne-klein', keywords: 'anne-klein', description: 'anne-klein', parent: kids)
+
+women = Category.create(title: 'Women', bytitle: 'women', keywords: 'women', description: 'for women')
+electronic2 = Category.create(title: 'Electronic', bytitle: 'electronic2', keywords: 'electronic', description: 'electronic', parent: women)
+mechanical2 = Category.create(title: 'Mechanical', bytitle: 'mechanical2', keywords: 'mechanical', description: 'mechanical', parent: women)
+epos = Category.create(title: 'Epos', bytitle: 'epos', keywords: 'epos', description: 'epos', parent: electronic2)
+seiko = Category.create(title: 'Seiko', bytitle: 'seiko', keywords: 'seiko', description: 'seiko', parent: mechanical2)
+
+men = Category.create(title: 'Men', bytitle: 'men', keywords: 'men', description: 'for men')
+electronic1 = Category.create(title: 'Electronic', bytitle: 'electronic1', keywords: 'electronic', description: 'electronic', parent: men)
+mechanical1 = Category.create(title: 'Mechanical', bytitle: 'mechanical1', keywords: 'mechanical', description: 'mechanical', parent: men)
+casio = Category.create(title: 'Casio', bytitle: 'casio', keywords: 'casio', description: 'casio', parent: mechanical1)
+citizen = Category.create(title: 'Citizen', bytitle: 'citizen', keywords: 'citizen', description: 'citizen', parent: electronic1)
+royal = Category.create(title: 'Royal London', bytitle: 'royal-london', keywords: 'royal-london', description: 'royal-london', parent: electronic1)
+
+kids = Category.create(title: 'Kids', bytitle: 'kids', keywords: 'kids', description: 'for kids')
+adriatica = Category.create(title: 'Adriatica', bytitle: 'adriatica', keywords: 'adriatica', description: 'adriatica', parent: kids)
+mechanical1 = Category.create(title: 'Anne Klein', bytitle: 'anne-klein', keywords: 'anne-klein', description: 'anne-klein', parent: kids)
 
 # - - - - - - - -
 
@@ -330,6 +329,54 @@ product_attributes = [
 
 product_attributes.each do |attr|
   Product.create(attr) unless Product.where(attr).first
+end
+
+
+ # related_products
+related_product_attributes = [
+                      {product_id: '1', related_id: '9'},
+                      {product_id: '2', related_id: '6'},
+                      {product_id: '3', related_id: '3'},
+                      {product_id: '4', related_id: '1'},
+                      {product_id: '5', related_id: '4'},
+                      {product_id: '6', related_id: '4'},
+                      {product_id: '7', related_id: '4'},
+                      {product_id: '8', related_id: '4'},
+                      {product_id: '9', related_id: '4'},
+                      {product_id: '1', related_id: '8'},
+                      {product_id: '2', related_id: '5'},
+                      {product_id: '3', related_id: '2'},
+                      {product_id: '4', related_id: '2'},
+                      {product_id: '5', related_id: '1'},
+                      {product_id: '6', related_id: '1'},
+                      {product_id: '7', related_id: '1'},
+                      {product_id: '8', related_id: '1'},
+                      {product_id: '9', related_id: '1'},
+                      {product_id: '1', related_id: '7'},
+                      {product_id: '2', related_id: '4'},
+                      {product_id: '3', related_id: '1'},
+                      {product_id: '4', related_id: '3'},
+                      {product_id: '5', related_id: '2'},
+                      {product_id: '6', related_id: '2'},
+                      {product_id: '7', related_id: '2'},
+                      {product_id: '8', related_id: '2'},
+                      {product_id: '9', related_id: '2'}
+]
+
+related_product_attributes.each do |attr|
+  RelatedProduct.create(attr) unless RelatedProduct.where(attr).first
+end
+
+
+# galleries_table
+gallery_attributes = [
+  {id: '1', product_id: '2', img: 's-1.jpg'},
+  {id: '2', product_id: '2', img: 's-2.jpg'},
+  {id: '3', product_id: '2', img: 's-3.jpg'}
+]
+
+gallery_attributes.each do |attr|
+  Gallery.create(attr) unless Gallery.where(attr).first
 end
 
 # - - - - -

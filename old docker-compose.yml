@@ -1,14 +1,13 @@
 version: "3.9"
 services:
   db:
-    image: sakhno0408/store_db
+    image: postgres
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: password
   web:
     build: .
-    image: sakhno0408/store_app    
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/myapp
