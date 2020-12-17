@@ -3,7 +3,7 @@ var products = new Bloodhound ({
   datumTokenizer: Bloodhound.tokenizers.whitespace,
   queryTokenizer: Bloodhound.tokenizers.whitespace,
   remote: {
-    wildcart: '%QUERY',
+    wildcard: '%QUERY',
     url: '/search?query=%QUERY'
   }
 });
@@ -20,6 +20,6 @@ $("#typeahead").typeahead({
 });
 
 $("#typeahead").bind('typeahead:select', function(ev, suggestion) {
-  console.log(suggestion);
-  window.location = '/product/' + encodeURIComponet(suggestion.id);
+  //console.log((suggestion.id));
+  window.location = '/product/' + encodeURIComponent(suggestion.id);
 });
