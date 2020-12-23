@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 2020_12_22_145327) do
   enable_extension "plpgsql"
 
   create_table "authorizations", force: :cascade do |t|
-    t.bigint "ueser_id"
+    t.bigint "user_id"
     t.string "provider"
     t.string "uid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ueser_id"], name: "index_authorizations_on_ueser_id"
+    t.index ["user_id"], name: "index_authorizations_on_user_id"
   end
 
   create_table "brands", force: :cascade do |t|

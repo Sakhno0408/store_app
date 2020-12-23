@@ -13,6 +13,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'omniauth'
 gem 'omniauth-facebook'
+# gem 'pundit'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -27,7 +27,7 @@
                   <%= f.input :email, required: true, autofocus: true, input_html: {class: "form-control"} %>
                 </div>
                 <div class="form-group has-feedback">
-                  <%= if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                     <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
                   <% end %>
                 </div>
