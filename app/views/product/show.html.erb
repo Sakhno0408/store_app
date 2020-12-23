@@ -110,8 +110,7 @@
               <ul>
                 <li class="subitem1">
                   <a href="#">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <%= @product.description%>
                   </a>
                 </li>
                 <li class="subitem2">
@@ -222,7 +221,7 @@
                       <h3><a href="<%= related.id %>"><%= related.title %></a></h3>
                       <p>Explore Now</p>
                       <h4>
-                        <a class="item_add add-to-cart-link" href="cart/add?id=<%= related.id %>"><i></i>
+                        <a class="item_add add-to-cart-link" href="cart/add?id=<%= related.id %>" data-id="<%=related.id%>"><i></i>
                         </a>
                         <span class="item_price">$ <%= related.price %> </span>
                         <% if related.old_price %>
@@ -352,3 +351,4 @@
   </div>
 </div>
 <!-- end-single -->
+<input type="hidden" value="<%= !current_user.nil? ? 88 : 99 %>" id="cart_access" />
