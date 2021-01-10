@@ -3,11 +3,12 @@ class ProductController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    authorize @product
     set_page_options
   end
 
   helper_method :recent_products
-  attr_accessor :product # почитать про это
+  attr_accessor :product
 
   def recent_products
     [] if recently.none?

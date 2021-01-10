@@ -13,7 +13,9 @@ gem 'devise'
 gem 'simple_form'
 gem 'omniauth'
 gem 'omniauth-facebook'
-# gem 'pundit'
+gem 'pundit'
+gem 'doorkeeper'
+gem 'active_model_serializers'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
