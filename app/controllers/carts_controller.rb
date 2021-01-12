@@ -6,6 +6,4 @@ class CartsController < ApplicationController
     render :show
   end
 
-
-
 end

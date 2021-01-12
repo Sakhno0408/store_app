@@ -3,5 +3,5 @@ class Cart < ApplicationRecord
   has_many :products, through: :cart_items
   belongs_to :user
 
-  validates :user_id, presence: true 
+  validates :user_id, presence: true
 end

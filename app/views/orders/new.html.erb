@@ -1,0 +1,38 @@
+<h1>Оформление заказа</h1>
+
+<%= render 'include/cart/cart' %>
+
+
+<%= form_with model: @order, url: order_path, local: true do |form| %>
+
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@order.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @order.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :address %><br>
+    <%= form.text_field :adress %>
+  </p>
+
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_field :credit_card %>
+  </p>
+
+  <%= select_tag "order[delivery_method_id]", options_from_collection_for_select(@delivery_methods, "id", "name_delivery_method", "1") %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>

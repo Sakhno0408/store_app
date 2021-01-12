@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   has_many :authorizations
 
+  has_many :orders, dependent: :destroy  
+
   validates :email, presence: true
   validates :password, presence: true
 end

@@ -33,6 +33,7 @@ end
 # - - - - -
 
 
+
 # table categories
 
 women = Category.create(title: 'Women', bytitle: 'women', keywords: 'women', description: 'for women')
@@ -381,6 +382,25 @@ end
 
 # - - - - -
 
+
+# Delivery methods
+delivery_method_attributes = [{
+                      id: '1',
+                      name_delivery_method: '1'
+                    },
+                    {
+                      id: '2',
+                      name_delivery_method: '2'
+                    },
+                    {
+                      id: '3',
+                      name_delivery_method: '3'
+                    }]
+
+delivery_method_attributes.each do |attr|
+  # puts attr
+  DeliveryMethod.create(attr)
+end
 
 # table related products
 
