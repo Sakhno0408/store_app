@@ -4,6 +4,6 @@ class Api::V1::ProductsController < Api::V1::BaseController
 
   def index
     @products = Product.all.limit(5)
-    respound_with @products
+    respond_with @products
   end
 end

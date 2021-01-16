@@ -16,7 +16,7 @@
 }
 
 
-.del-item{
+.del-item, .plus-quantity, .minus-quantity{
   cursor: pointer;
 }
 
@@ -162,4 +162,11 @@ form .has-error .form-control{
   left:50%;
   top:50vh;
   margin:-100px 0 0 -100px;
+}
+
+
+/* -- order -- */
+.order-items {
+	margin-left: 50px;
+	margin-right: 50px;
 }

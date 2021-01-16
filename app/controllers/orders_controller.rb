@@ -1,19 +1,27 @@
 class OrdersController < ApplicationController
+  include CartsHelper
 
-  # def show
-  #
-  # end
+  def show
+    @order = current_user.orders.find(params[:id])
+  end
 
   def new
+
      @order = current_user.orders.new
+
      @delivery_methods = DeliveryMethod.all
   end
 
   def create
     @order = current_user.orders.new(order_params)
 
+
+
     if @order.save
-      redirect_to 'show'
+      products.map do |item|
+        @order.order_items.create(product_id: item.product_id, quantity: item.quantity, price: item.product.price);
+      end
+      redirect_to @order
     else
       render 'new'
     end
@@ -26,6 +34,8 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order).permit(:adress, :credit_card, :delivery_method_id)
+      params.require(:order).permit(:address, :credit_card, :delivery_method_id)
     end
+
+    helper_method :products
 end

@@ -55,7 +55,7 @@ $('body').on('click', '.add-to-cart-link', function (e) {
           showCart(res)
         },
         error: function () {
-          alert('Error! Try later!2');
+          alert('Error! Try later!');
         }
       });
 });
@@ -77,6 +77,7 @@ $('#cart .modal-body').on('click', '.del-item', function(){
     }
   });
 });
+
 
 function showCart(cart) {
   if( $.trim(cart) == '<td>Cart is Empty</td>' ) {

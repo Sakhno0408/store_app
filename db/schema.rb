@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 2021_01_11_174257) do
 
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "adress"
+    t.string "address"
     t.string "credit_card"
     t.bigint "delivery_method_id"
     t.datetime "created_at", null: false

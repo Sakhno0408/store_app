@@ -1,9 +1,10 @@
 <h1>Оформление заказа</h1>
+<div class="modal-body order-items">
+  <%= render 'include/cart/cart' %>
+</div>
 
-<%= render 'include/cart/cart' %>
 
-
-<%= form_with model: @order, url: order_path, local: true do |form| %>
+<%= form_with model: @order, local: true do |form| %>
 
   <% if @order.errors.any? %>
     <div id="error_explanation">
@@ -21,7 +22,7 @@
 
   <p>
     <%= form.label :address %><br>
-    <%= form.text_field :adress %>
+    <%= form.text_field :address %>
   </p>
 
   <p>
@@ -36,3 +37,6 @@
   </p>
 
 <% end %>
+
+<!-- end-single -->
+<input type="hidden" value="<%= !current_user.nil? ? 88 : 99 %>" id="cart_access" />
