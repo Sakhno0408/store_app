@@ -79,6 +79,49 @@ $('#cart .modal-body').on('click', '.del-item', function(){
 });
 
 
+$('#cart .modal-body').on('click', '.plus-quantity', function(){
+  var id = $(this).data('id');
+  var qty = $(this).data('qty');
+
+  qty++;
+  $.ajax({
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token',
+                $('meta[name="csrf-token"]').attr('content'))},
+    url: "/cart/items/"+id,
+    data: {id: id, quantity: qty},
+    method: 'PUT',
+    type: 'PUT',
+    success: function(res){
+      showCart(res);
+    },
+    error: function(){
+      alert('Error!');
+    }
+  });
+});
+
+$('#cart .modal-body').on('click', '.minus-quantity', function(){
+  var id = $(this).data('id');
+  var qty = $(this).data('qty');
+
+  if (qty>1) qty--;
+
+  $.ajax({
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token',
+                $('meta[name="csrf-token"]').attr('content'))},
+    url: "/cart/items/"+id,
+    data: {id: id, quantity: qty},
+    method: 'PUT',
+    type: 'PUT',
+    success: function(res){
+      showCart(res);
+    },
+    error: function(){
+      alert('Error!');
+    }
+  });
+});
+
 function showCart(cart) {
   if( $.trim(cart) == '<td>Cart is Empty</td>' ) {
     $('#cart .modal-footer a, #cart .modal-footer .btn-danger').css('display', 'none');

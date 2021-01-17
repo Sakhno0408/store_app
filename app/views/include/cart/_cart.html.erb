@@ -8,7 +8,7 @@
             <th>Наименование</th>
             <th>Кол-во</th>
             <th>Цена</th>
-            <th><span class="gliphicon gliphicon-remove" aria-hidden="true"></span></th>
+            <th><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></th>
           </tr>
         </thead>
         <tbody>
@@ -25,9 +25,9 @@
               </td>
               <td><%= link_to(item.product.title, item.product) %></td>
               <td>
-                <span data-id="<%= item.id %>" class="glyphicon glyphicon-minus text-danger minus-quantity" aria-hidden="true"></span>
+                <span data-id="<%= item.id %>" data-qty="<%= item.quantity %>" class="glyphicon glyphicon-minus text-danger minus-quantity" aria-hidden="true"></span>
                 <% qty << item.quantity %><%= item.quantity %>шт.
-                <span data-id="<%= item.id %>" class="glyphicon glyphicon-plus text-primary plus-quantity" aria-hidden="true"></span>
+                <span data-id="<%= item.id %>" data-qty="<%= item.quantity %>" class="glyphicon glyphicon-plus text-primary plus-quantity" aria-hidden="true"></span>
               </td>
               <% pr = item.quantity * item.product.price %>
               <% sum << pr %>

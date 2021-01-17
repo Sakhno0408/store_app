@@ -385,20 +385,16 @@ end
 
 # Delivery methods
 delivery_method_attributes = [{
-                      id: '1',
-                      name_delivery_method: '1'
+                      name_delivery_method: 'Нова пошта'
                     },
                     {
-                      id: '2',
-                      name_delivery_method: '2'
+                      name_delivery_method: 'Самовывоз'
                     },
                     {
-                      id: '3',
-                      name_delivery_method: '3'
+                      name_delivery_method: 'Укрпочта'
                     }]
 
 delivery_method_attributes.each do |attr|
-  # puts attr
   DeliveryMethod.create(attr)
 end
 
