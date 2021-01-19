@@ -12,10 +12,7 @@ Rails.application.routes.draw do
     resources :items, only: %i[destroy create update]
   end
 
-  resources :orders do
-    resources :order_items, only: %i[destroy create]
-  end
-
+  resources :orders
 
   resources :search, only: [:index]
 

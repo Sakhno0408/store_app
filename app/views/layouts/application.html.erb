@@ -13,22 +13,26 @@
   </head>
 
   <body>
-    <!-- Top Header -->
-    <%= render 'include/main/top_header' %>
-    <!-- Top Header -->
-
-    <!-- notifications -->
-    <%= render 'include/main/notifications' %>
-    <!-- notifications -->
 
 
-    <!-- Start Logo -->
-    <div class="logo">
-      <%= link_to root_path do %>
-        <h1>Luxury Watches</h1>
-      <% end %>
-    </div>
-    <!-- Start Logo -->
+    <% unless params[:controller] == 'orders' && params[:action] == 'new' %>
+      <!-- Top Header -->
+      <%= render 'include/main/top_header' %>
+      <!-- Top Header -->
+
+      <!-- notifications -->
+      <%= render 'include/main/notifications' %>
+      <!-- notifications -->
+
+
+      <!-- Start Logo -->
+      <div class="logo">
+        <%= link_to root_path do %>
+          <h1>Luxury Watches</h1>
+        <% end %>
+      </div>
+      <!-- Start Logo -->
+    <% end %>
 
     <!-- Bottom Header -->
     <%= render 'include/main/bottom_header' %>

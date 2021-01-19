@@ -1,0 +1,4 @@
+<h1>Поздравляем! Вы купили часы!</h1>
+<% @order.order_items.each do |item| %>
+  <p><%= item.product.title %></p>
+<% end %>

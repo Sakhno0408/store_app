@@ -24,4 +24,5 @@
 // =require jquery.flexslider
 // =require flexs
 // =require my
+// =require orders
 // =require order_items

@@ -5,6 +5,7 @@ $.ajaxSetup({
 });
 
 
+
 /* Search */
 var products = new Bloodhound ({
   datumTokenizer: Bloodhound.tokenizers.whitespace,

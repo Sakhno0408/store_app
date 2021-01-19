@@ -3,7 +3,7 @@
   <div class="container">
     <div class="breadcrumbs-main">
       <ol class="breadcrumb">
-        <li><a href="/"><%= render_breadcrumbs %></a></li>
+        <li><%= render_breadcrumbs :separator => ' / ' %></li>
         <li class="active">Оформление заказа</li>
       </ol>
     </div>
@@ -12,8 +12,9 @@
 <!-- end breadcrumbs -->
 <div class="container" id="order">
   <div class="">
-    <h1>Оформление заказа</h1>
+    <h1>Оформление заказа № <%= @order.number_order %></h1>
     <%= form_with model: @order, class: "form-group", local: true do |form| %>
+      <input type="text" name="order[number_order]" hidden="true" value=<%= @order.number_order %>>
       <p>
         <%= form.label 'Адрес:' %><br>
         <% if @order.errors[:address].any? %>
@@ -104,7 +105,7 @@
 
       </div>
       <p>
-        <%= form.submit 'Оформить заказ', class: "btn btn-primary"%>
+        <%= form.submit 'Оформить заказ', class: "btn btn-primary btn-crt-order"%>
       </p>
     <% end %>
   </div>

@@ -1,3 +1,8 @@
+check_submit_btn =(qty_all) ->
+  if qty_all == 0
+    $('#order .btn-crt-order').attr('disabled', 'disabled')
+
+
 $('#order').on 'click', '.plus-quantity', ->
   id = $(this).data('id')
 
@@ -17,8 +22,6 @@ $('#order').on 'click', '.plus-quantity', ->
   cart_sum = Number($('.cart-sum').text()) + price
   $('.cart-sum').text cart_sum.toFixed(2)
 
-  return
-
 $('#order').on 'click', '.minus-quantity', ->
   id = $(this).data('id')
   str_class = '.qty-' + id
@@ -37,7 +40,6 @@ $('#order').on 'click', '.minus-quantity', ->
 
     cart_sum = Number($('.cart-sum').text()) - price
     $('.cart-sum').text cart_sum.toFixed(2)
-  return
 
 $('#order').on 'click', '.del-item', ->
   id = $(this).data('id')
@@ -53,8 +55,7 @@ $('#order').on 'click', '.del-item', ->
 
   qty_all = Number($('.cart-qty').text()) - qty
   $('.cart-qty').text qty_all
+  check_submit_btn qty_all
 
   cart_sum = Number($('.cart-sum').text()) - price*qty
   $('.cart-sum').text cart_sum.toFixed(2)
-
-  return

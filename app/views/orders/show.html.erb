@@ -3,16 +3,16 @@
   <div class="container">
     <div class="breadcrumbs-main">
       <ol class="breadcrumb">
-        <li><a href="/"><%= render_breadcrumbs %></a></li>
-        <li class="active">Заказ № <%= @order.id %></li>
+        <li><%= render_breadcrumbs :separator => ' / ' %></li>
+        <li class="active">Заказ № <%= @order.number_order %></li>
       </ol>
     </div>
   </div>
 </div>
 <!-- end breadcrumbs -->
 <div class="container">
-  <h1>Заказ № <%= @order.id %></h1>
-  <p class="h4">Статус заказа: В обработке</p>
+  <h1>Заказ № <%= @order.number_order %></h1>
+  <p class="h4">Статус заказа: <%= @order.status %></p>
   <p class="h4">Адрес: <%= @order.address %></p>
   <p class="h4">Способ доставки: <%= @delivery_methods.name_delivery_method %></p>
 
