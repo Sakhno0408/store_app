@@ -31,9 +31,9 @@ class OrdersController < ApplicationController
     if @order.save
       current_cart.destroy
 
-      puts '~'*100
-      UserMailer.with(user: current_user, order: @order).сonfirmation_email.deliver_now
-      puts '~'*100
+      # puts '~'*100
+      # UserMailer.with(user: current_user, order: @order).сonfirmation_email.deliver_now
+      # puts '~'*100
       
       redirect_to @order
     else
